@@ -51,7 +51,7 @@
                 android:id="@+id/textView2"
                 android:layout_weight="1"
                 android:textSize="@dimen/h2"
-                android:textColor="@color/text" />
+                android:textColor="@android:color/background_dark" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
                 android:id="@+id/textView3"
                 android:layout_weight="1"
                 android:textSize="@dimen/h2"
-                android:textColor="@color/text" />
+                android:textColor="@android:color/background_dark" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -99,7 +99,7 @@
                 android:id="@+id/textView4"
                 android:layout_weight="1"
                 android:textSize="@dimen/h2"
-                android:textColor="@color/text" />
+                android:textColor="@android:color/background_dark" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -123,7 +123,7 @@
                 android:id="@+id/textView5"
                 android:layout_weight="1"
                 android:textSize="@dimen/h2"
-                android:textColor="@color/text" />
+                android:textColor="@android:color/background_dark" />
 
             <EditText
                 android:layout_width="wrap_content"
