@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -22,12 +23,19 @@ public class MainActivity extends AppCompatActivity {
     //Explicit
     private MyManage myManage;
     private static final String urlJSON = "http://swiftcodingthai.com/pbru2/get_user_master.php";
+    private EditText userEditText, passwordEditText;
+    private String userString, passwordString;
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Bind
+        userEditText = (EditText) findViewById(R.id.editText5);
+        passwordEditText = (EditText) findViewById(R.id.editText6);
 
         myManage = new MyManage(this);
 
@@ -43,6 +51,26 @@ public class MainActivity extends AppCompatActivity {
         mySynJSON();
 
     }   // Main Method
+
+    public void clickSignIn(View view) {
+
+        userString = userEditText.getText().toString().trim();
+        passwordString = passwordEditText.getText().toString();
+
+        // chck space
+
+        if (userString.equals("") || passwordString.equals("")) {
+            MyAiert myAiert = new MyAiert();
+            myAiert.myDialog(this, "Have Space", "Please Fill All Every");
+        } else {
+            checkUserAnPass();
+        }
+
+
+    } //clickSignIn
+
+    private void checkUserAnPass() {
+    }
 
 //    private void AddFirst() {
 //
