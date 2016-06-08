@@ -56,6 +56,7 @@ public class CalendarActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
+        builder.show();
 
     }   // confirmDialog
 
