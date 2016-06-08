@@ -2,6 +2,7 @@ package pbru.example.lab324_18.itpbru;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CalendarView;
@@ -28,7 +29,7 @@ public class CalendarActivity extends AppCompatActivity {
 
     private void confirmDialog(int day, int month, int year) {
 
-        String strDate = Integer.toString(day) +
+        final String strDate = Integer.toString(day) +
                 "/" + Integer.toString(month + 1) +
                 "/" + Integer.toString(year);
 
@@ -44,15 +45,26 @@ public class CalendarActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-        builder.setPositiveButton("In", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Revenue", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(CalendarActivity.this, UploadAccount.class);
+                intent.putExtra("Login", getIntent().getStringArrayExtra("Login"));
+                intent.putExtra("InOut", 0);
+                intent.putExtra("Date", strDate);
+                startActivity(intent);
+
                 dialog.dismiss();
             }
         });
-        builder.setNegativeButton("Pay", new DialogInterface.OnClickListener() {
+        builder.setNeutralButton("Payment", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(CalendarActivity.this, UploadAccount.class);
+                intent.putExtra("Login", getIntent().getStringArrayExtra("Login"));
+                intent.putExtra("InOut", 1);
+                intent.putExtra("Date", strDate);
+                startActivity(intent);
                 dialog.dismiss();
             }
         });
