@@ -90,6 +90,12 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Welcome" + loginStrings[1] + "" + loginStrings[2],
                         Toast.LENGTH_SHORT).show();
 
+                Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
+                intent.putExtra("Login", loginStrings);
+                startActivity(intent);
+                finish();
+                //calandar
+
             } else {
                 MyAiert myAiert = new MyAiert();
                 myAiert.myDialog(this, "Password False", "Please try Again password");
