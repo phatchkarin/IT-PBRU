@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="pbru.example.lab324_18.itpbru.MainActivity"
-    android:background="@drawable/wall12">
+    android:background="@color/material_deep_teal_200">
 
     <LinearLayout
         android:orientation="horizontal"
